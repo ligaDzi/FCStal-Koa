@@ -1,0 +1,217 @@
+
+
+<div class="top_nav">
+    <a id="tab_calendar" href="#" class="top_nav_item activ_item">
+        Календарь
+    </a>
+    <a id="tab_table" href="#" class="top_nav_item leftLine">
+        Таблица
+    </a>
+</div>
+<div class="header_calendar">
+    <h1 class="h1Calendar">Сезон <span>2013/14</span></h1>
+</div>
+
+
+<div class="calendarNone"  style="display:none">
+    
+<div class="match_baner">
+    <div class="match_baner_content">
+        <div class="match_baner_logo">
+            <img class="icon" src="img/logo/<%=nextLogoTourn %>" />
+            <span><%=nextTournament %></span>
+        </div>
+        <div class="match_baner_items">
+            <div class="match_baner_team is_home">
+                <div class="match_baner_team_logo">
+                    <img src="img/logo/<%=nextLogoHost %>" />
+                </div>
+                <div class="match_baner_team_content">
+                    <div class="match_baner_team_name">
+                        <%=nextHost %>
+                    </div>
+                </div>
+            </div>
+            <span class="versus"></span>
+            <div class="match_baner_team is_away">
+                <div class="match_baner_team_logo">
+                    <img src="img/logo/<%=nextLogoVisit %>" />
+                </div>
+                <div class="match_baner_team_content">
+                    <div class="match_baner_team_name">
+                         <%=nextVisit %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="match_baner_counters">
+            <div class="match_date">
+                <strong><%=nexDate %> </strong>
+                <%=nextTime %>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="match_list">
+
+    <% for(var i=0; i<matchs.length;i++) {%>
+
+    <% if(matchs[i].monthCalendar) {%>
+    <div class="month_calendar">
+        <h2 class="h2Calendar"><span><%=matchs[i].months %></span><%=matchs[i].year %></h2>
+    </div>
+    <%} %>
+
+    <div class="match_item">
+        <div class="match_item_content">
+            <div class="match_item_info">
+                <div class="match_info_date">
+                    <strong><%=matchs[i].day %></strong>
+                    <%=matchs[i].time %>
+                </div>
+                <div class="match_info_location">
+                    <span><%=matchs[i].tournament %></span>
+                </div>
+            </div>
+            <div class="match_item_conteiner">
+                <div class="match_item_teams">
+                    <div class="match_item_home">
+                        <div class="match_item_team_logo">
+                            <img src="img/logo/<%=matchs[i].logoHostTeam %>" />
+                        </div>
+                        <div class="match_item_team_name">
+                            <%=matchs[i].nameHostTeam %>
+                        </div>
+                        <div class="match_item_team_score">
+                            <%=matchs[i].goalHost %>
+                        </div>
+                    </div>
+                    <span class="match_item_versus">-</span>
+                    <div class="match_item_away">
+                        <div class="match_item_team_logo">
+                            <img src="img/logo/<%=matchs[i].logoVisitTeam %>" />
+                        </div>
+                        <div class="match_item_team_name">
+                            <%=matchs[i].nameVisitTeam %>
+                        </div>
+                        <div class="match_item_team_score">
+                            <%=matchs[i].goalVisit %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="match_item_tourn">
+                <img src="img/logo/<%=matchs[i].logoTournament %>" />
+            </div>
+        </div>
+
+        <% if(matchs[i].info) {%> 
+
+        <div class="btn_result">
+            <hr/>
+        </div>
+        <div class="match_item_data" style="overflow: hidden;">
+            <div class="match_data">
+                <div class="match_data_table">
+
+                    <% if(matchs[i].goalBool) {%>   
+                    <div class="match_data_row match_data_row_goals">
+                        <div class="match_data_cell">
+
+                            <% if(matchs[i].playersGoalHost) {%>
+                                <% for(var x=0; x<matchs[i].playersGoalHost.length;x++) {%>
+
+                                    <span><%=matchs[i].playersGoalHost[x] %></span>
+
+                                <%} %>
+                            <%} %>
+
+                        </div>
+                        <div class="match_data_cell match_data_cell_icon">
+                            <img src="img/icon/football-ball.png" />
+                        </div>                        
+                        <div class="match_data_cell">
+
+                            <% if(matchs[i].playersGoalVisit) {%>
+                                <% for(var y=0; y<matchs[i].playersGoalVisit.length;y++) {%>
+
+                                    <span><%=matchs[i].playersGoalVisit[y] %></span>
+
+                                <%} %>        
+                            <%} %>                            
+                         </div>
+                    </div>
+                    <%} %>
+                    <% if(matchs[i].yellowBool) {%> 
+                    <div class="match_data_row">
+                        <div class="match_data_cell">
+
+                                <% if(matchs[i].playersYellowHost) {%>
+                                    <% for(var z=0; z<matchs[i].playersYellowHost.length;z++) {%>
+    
+                                        <span><%=matchs[i].playersYellowHost[z] %></span>
+    
+                                    <%} %>        
+                                <%} %>    
+                        </div>
+                        <div class="match_data_cell match_data_cell_icon">
+                            <img src="img/icon/yellow-cards.png" />
+                        </div>
+                        <div class="match_data_cell">
+
+                                <% if(matchs[i].playersYellowVisit) {%>
+                                    <% for(var n=0; n<matchs[i].playersYellowVisit.length;n++) {%>
+    
+                                        <span><%=matchs[i].playersYellowVisit[n] %></span>
+    
+                                    <%} %>        
+                                <%} %> 
+                        </div>
+                    </div>
+                    <%} %>
+                    <% if(matchs[i].redBool) {%> 
+                    <div class="match_data_row">
+                        <div class="match_data_cell">
+
+                                <% if(matchs[i].playersRedHost) {%>
+                                    <% for(var k=0; k<matchs[i].playersRedHost.length;k++) {%>
+    
+                                        <span><%=matchs[i].playersRedHost[k] %></span>
+    
+                                    <%} %>        
+                                <%} %> 
+                        </div>
+                        <div class="match_data_cell match_data_cell_icon">
+                            <img src="img/icon/red-cards.png" />
+                        </div>
+                        <div class="match_data_cell">
+
+                                <% if(matchs[i].playersRedVisit) {%>
+                                    <% for(var b=0; b<matchs[i].playersRedVisit.length;b++) {%>
+    
+                                        <span><%=matchs[i].playersRedVisit[b] %></span>
+    
+                                    <%} %>        
+                                <%} %> 
+                        </div>
+                    </div>
+                    <%} %>
+                    <div class="match_data_row">
+                        <span>Судья: <%=matchs[i].referee %></span>
+                        <span class="match_data_separator">|</span>
+                        <span>Стадион: <%=matchs[i].stadium %></span>
+                        <span class="match_data_separator">|</span>
+                        <span>Зрителей: <%=matchs[i].audience %></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%} %>
+    </div>
+    <%} %>
+</div>
+                  
+</div>

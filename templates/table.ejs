@@ -1,0 +1,80 @@
+
+
+<div class="top_nav">
+    <a id="tab_calendar" href="#" class="top_nav_item">
+        Календарь
+    </a>
+    <a id="tab_table" href="#" class="top_nav_item leftLine activ_item">
+         Таблица
+    </a>
+</div>
+<div class="header_calendar">
+    <h1 class="h1Calendar">Сезон <span>2013/14</span></h1>
+</div>
+
+<div class="tableNone"  style="display:none">
+    <div class="tablePFL">
+        <table class="table_basis">
+            <tbody>
+                <tr class="first_tr">
+                    <td class="table_labels" style="border-bottom:1px solid #000" colspan="2">
+                    </td>
+                    <td class="table_labels">
+                        <div class="table_abbr" title="Игры">
+                            И
+                        </div>
+                    </td>
+                    <td class="table_labels display_high">
+                        <div class="table_abbr" title="Победы">
+                            В
+                        </div>
+                    </td>
+                    <td class="table_labels display_high">
+                        <div class="table_abbr" title="Ничьи">
+                            Н
+                        </div>
+                    </td>
+                    <td class="table_labels display_high">
+                        <div class="table_abbr" title="Поражения">
+                            П
+                        </div>
+                    </td>
+                    <td class="table_labels display_high">
+                        <div class="table_abbr" title="Голы">
+                            Г
+                        </div>
+                    </td>
+                    <td class="table_labels">
+                        <div class="table_abbr" title="Разница">
+                            Р
+                        </div>
+                    </td>
+                    <td class="table_labels">
+                        <div class="table_abbr" title="Очки">
+                            О
+                        </div>
+                    </td>
+                    <td class="table_labels display_high"></td>
+                </tr>
+                <% for(var i=0; i<teams.length;i++) {%> 
+                <tr class="full_view <%=teams[i].stal %>">
+                    <td class="table_pos table_position_first">
+                        <%=teams[i].position %>
+                    </td>
+                    <td class="table_team">
+                        <span><%=teams[i].nameTeam %></span>
+                    </td>
+                    <td class="table_statistic"><%=teams[i].gamesNum %></td>
+                    <td class="table_statistic display_high"><%=teams[i].victoryNum %></td>
+                    <td class="table_statistic display_high"><%=teams[i].drawsNum %></td>
+                    <td class="table_statistic display_high"><%=teams[i].lesionsNum %></td>
+                    <td class="table_statistic display_high"><%=teams[i].goalScore %> : <%=teams[i].goalMissed %></td>
+                    <td class="table_statistic"><%=teams[i].diffGoal %></td>
+                    <td class="table_statistic"><%=teams[i].points %></td>
+                    <td class="table_statistic display_high"></td>
+                </tr>
+                <%} %>           
+            </tbody>
+        </table>
+    </div>
+</div>

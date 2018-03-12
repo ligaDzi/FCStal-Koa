@@ -1,0 +1,21 @@
+<% for(var i=0; i<news.length;i++) {%>  
+            
+    <div class="list_item" data-idNews=<%=news[i].id %> style="display:none">
+        <a class="card" href="#">
+            <div class="card_thumb">
+                <div style="background-image: url('../img/<%=news[i].imgHeader %>');" class="card_image">
+               </div>
+            </div>
+            <div class="card_conten">
+                <span class="date">
+                    <img src="img/icon/schedule-button.png" />
+                    <%=news[i].dateNews %>
+                </span>
+                <div class="card_text">
+                    <p><%=news[i].headerNews %></p>
+                </div>
+           </div>
+        </a>
+    </div>
+
+<%} %>
