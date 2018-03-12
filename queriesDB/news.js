@@ -18,7 +18,7 @@ module.exports = {
     find_from_to_news: async function(ctx, index_from, index_to){
 
         // найти новости - отсортировать по дате по убыванию - отсортировать по загаловку по возрастанию -
-        // пропустить столько = ctx.session.indexNews новостей - выбратьь только 9 новостей.
+        // пропустить столько = index_from новостей - выбратьь только index_to новостей.
         const news = await News.find({}).sort({dateNews: -1}).sort({headerNews: 1}).skip(index_from).limit(index_to);
 
         if(!news){

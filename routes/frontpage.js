@@ -12,7 +12,7 @@ exports.get = async function(ctx, next) {
     
     ctx.session.nextMatchInfo = await fillStartPg.fill_match("5a9fd61e9c40d345e4bb73c7", ctx);
 
-    // таблица на стартовой страницы
+    // таблица на стартовой странице
     ctx.session.startTable = await fillStartPg.fill_table(ctx);
     
     // здесь выбераются банеры из БД на главную страницу

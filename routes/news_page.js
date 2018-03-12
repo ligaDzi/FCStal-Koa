@@ -4,7 +4,7 @@ module.exports = {
   // возвращает страницу "Новости"
   get: async function(ctx, next) {
 
-    // (12 - 9) потому что когда нажимаеш на кнопку "Больше новостей" к req.session.indexNews прибавляется число 9 (см. get_moreNews())
+    // (12 - 9) потому что когда нажимаеш на кнопку "Больше новостей" к req.session.indexNews прибавляется число 9 (см. get_more())
     ctx.session.indexNews = 12 - 9;
 
     const fillNewsPg = require('../functions/fill_NewsPage');
