@@ -21,7 +21,7 @@ module.exports = {
             //Здесь формируется строка даты для блока новостей.
             const date = new Date(news[i].dateNews);
 
-            newsArr[i].dateNews = `${date.getDate()}.${months[date.getMonth()]}.${date.getFullYear()}`;
+            newsArr[i].dateNews = `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
             
         }
         return newsArr; 
@@ -39,7 +39,7 @@ module.exports = {
         //Здесь формируется строка даты для блока новостей.
         const date = new Date(news.dateNews);
 
-        newsArr.dateNews = `${date.getDate()}.${months[date.getMonth()]}.${date.getFullYear()}`;
+        newsArr.dateNews = `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
         
 
         return newsArr; 
