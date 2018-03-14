@@ -17,7 +17,9 @@ function getNews(){
 
         type: "GET",
         url: "/news",
-        success: (data)=>{            
+        success: (data)=>{ 
+            // меняется заголовок у мобильной версии сайта.
+            $('.nav_mobile_text_strong').text('Новости');           
 
             $('.main').html(data);
 
@@ -102,6 +104,10 @@ function getCalendar(){
         type: "GET",
         url: "/calendar",
         success: (data)=>{
+
+            // меняется заголовок у мобильной версии сайта.
+            $('.nav_mobile_text_strong').text('Календарь');
+
             $('.main').html(data);
             $('#tab_table').click(getTable);
             $('#tab_calendar').click(getCalendar);
@@ -126,6 +132,10 @@ function getTable(){
         type: "GET",
         url: "/table",
         success: (data)=>{
+
+            // меняется заголовок у мобильной версии сайта.
+            $('.nav_mobile_text_strong').text('Таблица');
+
             $('.main').html(data);
             $('#tab_table').click(getTable);
             $('#tab_calendar').click(getCalendar);
@@ -146,6 +156,10 @@ function getTeam(){
         type: "GET",
         url: "/team",
         success: (data)=>{
+
+            // меняется заголовок у мобильной версии сайта.
+            $('.nav_mobile_text_strong').text('Команда');
+
             $('.main').html(data);
             animaPlayerInfo();
 
@@ -193,6 +207,10 @@ function getHistory(){
         type: "GET",
         url: "/history",
         success: (data)=>{
+
+            // меняется заголовок у мобильной версии сайта.
+            $('.nav_mobile_text_strong').text('Клуб');
+
             $('.main').html(data);
 
             // анимация постепенное появления новых блоков новостей
@@ -224,9 +242,7 @@ $(document).ready(function () {
 
     $('#news').click(()=>{
 
-        getNews();
-        
-       
+        getNews();  
     });
 
     $('#calendar').click(function(){
