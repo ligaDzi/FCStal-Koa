@@ -585,26 +585,7 @@ footer {
     }
 
 }
-/* Для дисплея с разрешением меньше 767 пискелей */
-@media (max-width: 767px) {
-    .sponsors{
-        .flex();
-        .justifyCenterFlex();
-        margin-top: 55px;
 
-        .logo_sponsor{
-            display: block;
-            width: 50px;
-            height: 20px;
-            margin-left: 20px;
-
-            .logo_sponsor_img {
-                width: 100%;
-                height: 100%;
-            }
-        }
-    }
-}
 /* Для дисплея с разрешением больше 768 пискелей */
 @media (min-width: 768px) {
     .content {
@@ -631,7 +612,26 @@ footer {
         }
     }
 }
+/* Для дисплея с разрешением меньше 1023 пискелей */
+@media (max-width: 1023px) {
+    .sponsors{
+        .flex();
+        .justifyCenterFlex();
+        margin-top: 55px;
 
+        .logo_sponsor{
+            display: block;
+            width: 50px;
+            height: 20px;
+            margin-left: 20px;
+
+            .logo_sponsor_img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
 /* Для дисплея с разрешением больше 1024 пискелей */
 @media (min-width: 1024px) {
 
