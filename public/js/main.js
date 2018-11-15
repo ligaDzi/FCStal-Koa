@@ -59,7 +59,7 @@ function getIDNews(className){
         });
     });
 }
-function  hangUpHandler(){
+function hangUpHandler(){
 
     // Здесь на новые блоки новостей вешаются обработчики на события 
     // ('.list_item:hidden' - это позволяет вешать обработчики именно на новые блоки новостей)
@@ -157,6 +157,7 @@ function getTeam(){
         url: "/team",
         success: (data)=>{
 
+            preloadImg();
             // меняется заголовок у мобильной версии сайта.
             $('.nav_mobile_text_strong').text('Команда');
 
@@ -220,6 +221,17 @@ function getHistory(){
             console.log("Ошибка");
         }
     })
+}
+
+/* Ф-ция работы прелоадера для изображений */
+function preloadImg(){
+    /* Сделать видимым прелоадер */
+    $('.preloader').fadeIn(10);
+        
+    /* Скрыть прелоадер после загрузки изображений */
+    $('.bcImg').on('load', function(){
+        $('.preloader').delay(500).fadeOut('slow');
+    });
 }
 
 $(document).ready(function () {
