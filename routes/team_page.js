@@ -29,8 +29,6 @@ module.exports = {
         });
     },
     getPlayers: async function(ctx, next){
-
-        console.log("TEST__________________________________________________________________________________");
         
         const fillTeamPg = require('../functions/fill_TeamPage');
 
