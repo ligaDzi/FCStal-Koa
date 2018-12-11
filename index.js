@@ -22,6 +22,7 @@ router.get('/news', require('./routes/news_page').get);
 router.get('/news/:id', require('./routes/news_page').get_by_id);
 router.get('/moreNews', require('./routes/news_page').get_more);
 router.get('/calendar', require('./routes/calendar_page').get);
+router.get('/calendartelebot', require('./routes/calendar_page').getMatchs);
 router.get('/table', require('./routes/table_page').get);
 router.get('/team', require('./routes/team_page').get);
 router.get('/players', require('./routes/team_page').getPlayers);
