@@ -38,5 +38,13 @@ module.exports = {
 
     await ctx.render('moreNews', {news: masNews});
 
+  },
+  //
+  getJSON: async function(ctx, next){
+
+    let news = require('../templates/telegramBotNews/news.json'); 
+
+    ctx.body = news;
+    ctx.status = 200;
   }
 }

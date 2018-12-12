@@ -20,6 +20,7 @@ const router = new Router();
 router.get('/', require('./routes/frontpage').get);
 router.get('/news', require('./routes/news_page').get);
 router.get('/news/:id', require('./routes/news_page').get_by_id);
+router.get('/newstelebot', require('./routes/news_page').getJSON);
 router.get('/moreNews', require('./routes/news_page').get_more);
 router.get('/calendar', require('./routes/calendar_page').get);
 router.get('/calendartelebot', require('./routes/calendar_page').getMatchs);
